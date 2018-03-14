@@ -13,7 +13,7 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String sayHello(){
-        logger.info("=== Hello, qhfax-api ===");
-        return ("Hello, qhfax-api");
+        logger.info("=== Hello, qhfax-api-2 ===");
+        return ("Hello, qhfax-api-2");
     }
 }
