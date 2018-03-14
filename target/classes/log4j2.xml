@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off">
+	<Appenders>
+		<!--这个输出控制台的配置 -->
+		<Console name="console" target="SYSTEM_OUT">
+			<!--输出日志的格式 -->
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%-5p] %x [%c{1}.%M:%L]: %m%n" />
+		</Console>
+		<Async name="AsyncConsole">
+			<AppenderRef ref="console" />
+		</Async>
+
+		<!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
+		<RollingFile name="RollingFile" fileName="/data/qhfax.log"
+			filePattern="/data/$${date:yyyy-MM}/qhfax-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%-5p] %x [%c{1}.%M:%L]: %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="1000 MB"/>
+			</Policies>
+		</RollingFile>
+		<Async name="AsyncRollingFile">
+			<AppenderRef ref="RollingFile" />
+		</Async>
+	</Appenders>
+	
+	<Loggers>
+		<Root level="info" includeLocation="true">
+			<AppenderRef ref="AsyncRollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>
