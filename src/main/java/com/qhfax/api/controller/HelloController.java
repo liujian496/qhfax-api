@@ -20,4 +20,8 @@ public class HelloController {
     public String mytest() {
         return null;
     }
+
+    public String mytest1() {
+        return "mytest1";
+    }
 }
