@@ -28,4 +28,8 @@ public class HelloController {
     public String mytest2() {
         return "mytest2";
     }
+
+    public String mytest3() {
+        return "mytest3";
+    }
 }
