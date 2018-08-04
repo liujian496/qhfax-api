@@ -29,8 +29,8 @@ public class HelloController {
         return "mytest2";
     }
 
-    public String mytest3() {
-        return "mytest3";
+    public String myname3() {
+        return "myname3";
     }
 
     public String myname4() {
