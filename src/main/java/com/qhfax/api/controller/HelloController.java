@@ -16,4 +16,8 @@ public class HelloController {
         logger.info("=== Hello, qhfax-api-2 ===");
         return ("Hello, qhfax-api-2");
     }
+
+    public String mytest() {
+        return null;
+    }
 }
