@@ -32,4 +32,8 @@ public class HelloController {
     public String mytest3() {
         return "mytest3";
     }
+
+    public String mytest4() {
+        return "mytest4";
+    }
 }
