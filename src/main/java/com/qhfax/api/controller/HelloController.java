@@ -33,7 +33,7 @@ public class HelloController {
         return "mytest3";
     }
 
-    public String mytest4() {
-        return "mytest4";
+    public String myname4() {
+        return "myname4";
     }
 }
